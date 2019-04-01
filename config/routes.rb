@@ -1,16 +1,8 @@
 Rails.application.routes.draw do
-  get 'profile/user_is:integer'
+  
 
-  get 'profile/firstname:string'
-
-  get 'profile/lastname:string'
-
-  get 'profile/email:string'
-
-  get 'profile/country:string'
-
-  get 'profiles/new'
-
+  devise_for :users
+ resources :profiles
   resources :courses
   ActiveAdmin.routes(self)
   root 'pages#index'
