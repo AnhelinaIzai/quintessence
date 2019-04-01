@@ -1,32 +1,33 @@
 class ProfilesController < ApplicationController
  before_action :authenticate_user!
-  
+ 
   def index
   end
   
-  def profile_info
-    @profile = current_user.profile
-    respond_to do |format|
-       format.js
-     end
-  end
+ # def profile_info
+   # @profile = current_user.profile
+    #respond_to do |format|
+    #   format.js
+    # end
+ # end
   
   def new
     @profile = Profile.new
   end
   
   def edit
-    @profile = current_user.profile
-     respond_to do |format|
-       format.js
-     end
+   
   end
   
+   def show
+   @profile = Profile.find_by(params[:id])
+  end
+
   def update
     @profile = current_user.profile
     @profile.update(profile_params)
     if @profile.save
-      redirect_to profile_index_path
+      redirect_to profile_path
     end
   end
   
