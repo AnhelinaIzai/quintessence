@@ -4,7 +4,8 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.string :firstname
       t.string :lastname
-      t.string :coutry
+      t.string :country
+      t.string :avatar
 
       t.timestamps
     end

@@ -1,5 +1,5 @@
 <h1> Your Profile Info</h1>
-<p><%= image_tag(current_user.profile.avatar, size: "50x50") %></p>
-<p><%= current_user.firstname %></p>
-<p><%= current_user.lastname %></p>
-<p><%= current_user.coutry %></p>
+<p><%= image_tag(current_user.profile.avatar_url, size: "50x50") %></p>
+<p><%= current_user.profile.firstname %></p>
+<p><%= current_user.profile.lastname %></p>
+<p><%= current_user.profile.country %></p>

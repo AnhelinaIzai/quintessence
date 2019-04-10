@@ -1,5 +1,4 @@
 class Profile < ApplicationRecord
 	belongs_to :user
-	mount_uploaders :avatars, AvatarUploader
-	serialize :avatars, JSON
+	mount_uploader :avatar, AvatarUploader
 end
