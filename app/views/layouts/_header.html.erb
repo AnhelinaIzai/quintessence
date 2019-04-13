@@ -1,10 +1,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <%= link_to "Quintessence", root_path, class: "navbar-brand" %>
-   
+
     <ul class="navbar-nav ml-auto">
-      <%= link_to root_path, class: "nav-link" do %>
-        <i class="far fa-images"></i> Show courses
-      <% end %>
 <% if !user_signed_in? %>
       <%= link_to user_session_path, class: "nav-link" do %>
         <i class="fas fa-sign-in-alt"></i> Login
@@ -15,13 +12,27 @@
           <i class="fas fa-user"></i> Profile
         <% end %>
       <% else %>
-          <%= link_to profiles_path, class: "nav-link" do %>
-          <i class="fas fa-user"></i> Profile
-        <% end %>
-      <% end %>
-      <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>
-        <i class="fas fa-sign-out-alt"></i> Logout
+          <div class="menu">
+            <ul class="menu__list">
+              <li>
+                <%= image_tag(current_user.profile.avatar_url, size:"25x25", class:"rounded-circle") %>
+                <ul class="menu__drop">
+                  <li class="item">Sign in as <strong><%= current_user.email.split('@').first %></strong>  </li>
+                  
+                  <li><%= link_to profiles_path, class:"link" do %> <i class="fas fa-user"></i> Profile
+                    <% end %>   </li>
+                  <li><%= link_to root_path, class: "link" do %> <i class="fas fa-bookmark"></i> Show my courses
+                  <% end %> </li>
+                  <li><%= link_to  destroy_user_session_path, class: "link", method: :delete do %>
+                    <i class="fas fa-sign-out-alt"></i> Sign out
+                    <% end %>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
       <% end %>
 <% end %>
+
     </ul>
 </nav>
