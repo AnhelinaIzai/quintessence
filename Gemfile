@@ -46,8 +46,14 @@ end
   gem 'jquery-rails'
  gem 'activeadmin'
   gem 'devise'
-  gem 'carrierwave', '~> 1.0'
-
+  
+   gem 'mime-types'
+      gem 'mini_magick'
+      gem 'rmagick',  '~> 3.1.0'
+      gem 'carrierwave', '~> 1.0'
+      gem 'carrierwave-video'
+      gem 'carrierwave-video-thumbnailer'
+      gem 'carrierwave-ffmpeg'
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
