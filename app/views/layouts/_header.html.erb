@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <%= link_to "Quintessence", root_path, class: "navbar-brand" %>
+    <%= image_tag("/assets/logo1.png", size:"369x124") %>
 
     <ul class="navbar-nav ml-auto">
 <% if !user_signed_in? %>
@@ -18,7 +18,7 @@
                 <%= image_tag(current_user.profile.avatar_url, size:"25x25", class:"rounded-circle") %>
                 <ul class="menu__drop">
                   <li class="item">Sign in as <strong><%= current_user.email.split('@').first %></strong>  </li>
-                  
+
                   <li><%= link_to profiles_path, class:"link" do %> <i class="fas fa-user"></i> Profile
                     <% end %>   </li>
                   <li><%= link_to root_path, class: "link" do %> <i class="fas fa-bookmark"></i> Show my courses
