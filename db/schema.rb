@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190424123713) do
+ActiveRecord::Schema.define(version: 20190508094421) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 20190424123713) do
     t.string "avatar"
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.integer "course_id"
+    t.string "document"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_documents_on_course_id"
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.integer "course_id"
     t.string "title"
@@ -73,7 +81,11 @@ ActiveRecord::Schema.define(version: 20190424123713) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "vimeo_file"
+    t.datetime "confirmed_at"
+    t.string "name"
+    t.string "confirmation_token"
+    t.datetime "confirmation_sent_at"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -5,11 +5,7 @@
       <%= link_to courses_path, class: "nav-link" do %>
         <i class="far fa-images"></i> Show courses
       <% end %>
-<% if !user_signed_in? %>
-      <%= link_to user_session_path, class: "nav-link" do %>
-        <i class="fas fa-sign-in-alt"></i> Login
-      <% end %>
-<% else %>
+<% if user_signed_in? %>
       <% if current_user.profile.nil? %>
         <%= link_to new_profile_path, class: "nav-link" do %>
           <i class="fas fa-user"></i> Profile
@@ -21,6 +17,12 @@
       <% end %>
       <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>
         <i class="fas fa-sign-out-alt"></i> Logout
+      <% end %>
+
+     
+<% else %>
+       <%= link_to user_session_path, class: "nav-link" do %>
+        <i class="fas fa-sign-in-alt"></i> Login
       <% end %>
 <% end %>
     </ul>

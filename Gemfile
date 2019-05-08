@@ -44,10 +44,10 @@ end
 
   gem 'bootstrap', '~> 4.3.1'
   gem 'jquery-rails'
- gem 'activeadmin'
+  gem 'activeadmin'
   gem 'devise'
-  
-   gem 'mime-types'
+  gem 'simple_form'
+      gem 'mime-types'
       gem 'mini_magick'
       gem 'rmagick',  '~> 3.1.0'
       gem 'carrierwave', '~> 1.0'
