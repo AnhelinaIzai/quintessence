@@ -2,17 +2,18 @@
     <%= image_tag("/assets/logo1.png", size:"369x124") %>
 
     <ul class="navbar-nav ml-auto">
-<<<<<<< HEAD
-=======
       <%= link_to courses_path, class: "nav-link" do %>
         <i class="far fa-images"></i> Show courses
       <% end %>
->>>>>>> 8783e1fa97b12022c48fd6b4e1a0ecbb8f74b93b
+<<<<<<< HEAD
 <% if !user_signed_in? %>
       <%= link_to user_session_path, class: "nav-link" do %>
         <i class="fas fa-sign-in-alt"></i> Login
       <% end %>
 <% else %>
+=======
+<% if user_signed_in? %>
+>>>>>>> 532052a029a9aa2436beb7b1c6b31e0475dc585a
       <% if current_user.profile.nil? %>
         <%= link_to new_profile_path, class: "nav-link" do %>
           <i class="fas fa-user"></i> Profile
@@ -37,6 +38,12 @@
               </li>
             </ul>
           </div>
+      <% end %>
+
+
+<% else %>
+       <%= link_to user_session_path, class: "nav-link" do %>
+        <i class="fas fa-sign-in-alt"></i> Login
       <% end %>
 <% end %>
 
