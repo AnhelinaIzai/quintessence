@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190401191251) do
+ActiveRecord::Schema.define(version: 20190424123713) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -26,9 +26,31 @@ ActiveRecord::Schema.define(version: 20190401191251) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.string "documents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "avatar"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.integer "course_id"
+    t.string "title"
+    t.string "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +73,7 @@ ActiveRecord::Schema.define(version: 20190401191251) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "vimeo_file"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

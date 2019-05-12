@@ -12,4 +12,25 @@ ActiveAdmin.register Course do
 #   permitted
 # end
 
+permit_params :title, :description, :avatar, documents:[]
+form html: { multipart: true } do |f|
+   f.semantic_errors
+
+   f.inputs do
+     f.input :title
+     f.input :avatar, as: :file
+     f.input :documents, as: :file, input_html: { multiple: true }
+     f.input :description
+
+   end
+   actions
+ end
+
 end
+
+
+
+
+
+
+

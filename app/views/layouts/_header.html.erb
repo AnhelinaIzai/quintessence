@@ -2,6 +2,12 @@
     <%= image_tag("/assets/logo1.png", size:"369x124") %>
 
     <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
+=======
+      <%= link_to courses_path, class: "nav-link" do %>
+        <i class="far fa-images"></i> Show courses
+      <% end %>
+>>>>>>> 8783e1fa97b12022c48fd6b4e1a0ecbb8f74b93b
 <% if !user_signed_in? %>
       <%= link_to user_session_path, class: "nav-link" do %>
         <i class="fas fa-sign-in-alt"></i> Login

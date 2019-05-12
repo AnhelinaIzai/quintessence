@@ -44,12 +44,25 @@ end
 
   gem 'bootstrap', '~> 4.3.1'
   gem 'jquery-rails'
+<<<<<<< HEAD
   gem 'font-awesome-sass', '~> 5.8.1'
   gem 'activeadmin'
   gem 'devise'
   gem 'carrierwave', '~> 1.0'
 
 
+=======
+ gem 'activeadmin'
+  gem 'devise'
+  
+   gem 'mime-types'
+      gem 'mini_magick'
+      gem 'rmagick',  '~> 3.1.0'
+      gem 'carrierwave', '~> 1.0'
+      gem 'carrierwave-video'
+      gem 'carrierwave-video-thumbnailer'
+      gem 'carrierwave-ffmpeg'
+>>>>>>> 8783e1fa97b12022c48fd6b4e1a0ecbb8f74b93b
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

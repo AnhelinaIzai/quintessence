@@ -5,10 +5,14 @@
   <%= @course.title %>
 </p>
 
+
+<p>  
+   <%= image_tag(@course.avatar.url,size:"200x200")  %>
+</p>
+
 <p>
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
-
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
