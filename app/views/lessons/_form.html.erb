@@ -1,14 +1,36 @@
-<%= form_for @lesson, url: {action: "create"} do |f| %>
+<%= form_with(model: lesson, local: true) do |form| %>
+  <% if lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
 
-  <div class="form-inputs">
-    
-    <%= f.text_field :title %>
-    <%= f.text_field :desc %>
-     
-      <%= f.file_field :attachment %>
+      <ul>
+      <% lesson.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.number_field :course_id, id: :lesson_course_id %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :lesson_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_field :desc, id: :lesson_desc %>
+  </div>
+
+ <div class="field">
+     <%= form.file_field :vimeo_file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
   </div>
 <% end %>

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
-
+<%= link_to 'New Course', new_course_path %>
 <table>
   <thead>
     <tr>
@@ -16,7 +16,8 @@
       <tr>
         <td><%= course.title %></td>
         <td><%= course.description %></td>
-        <td><%= image_tag(course.avatar_url, size: "50x50") %></td>
+        <td> <%= image_tag(course.avatar.url,size:"200x200")  %> </td>
+        <td><%= link_to "Add lesson", new_course_lesson_path %></td>
         <td><%= link_to 'Show', course %></td>
         </td>
       </tr>
@@ -25,5 +26,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Course', new_course_path %>

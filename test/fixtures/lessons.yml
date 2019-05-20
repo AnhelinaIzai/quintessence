@@ -4,10 +4,8 @@ one:
   course_id: 1
   title: MyString
   desc: MyString
-  attachment: MyString
 
 two:
   course_id: 1
   title: MyString
   desc: MyString
-  attachment: MyString

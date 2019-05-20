@@ -12,16 +12,15 @@ ActiveAdmin.register Course do
 #   permitted
 # end
 
-permit_params :title, :description, :avatar
-
+permit_params :title, :description, :avatar, documents:[]
 form html: { multipart: true } do |f|
    f.semantic_errors
 
    f.inputs do
-          f.input :title
+     f.input :title
      f.input :avatar, as: :file
+     f.input :documents, as: :file, input_html: { multiple: true }
      f.input :description
-
 
    end
    actions
@@ -35,7 +34,7 @@ form html: { multipart: true } do |f|
       if @course.save
         redirect_to edit_admin_course_path(@course.id)
       end
-      
+
       def edit
 		@course = Course.find(params[:id])
 	end
@@ -43,7 +42,3 @@ form html: { multipart: true } do |f|
 end
 
 end
-
-
-
-

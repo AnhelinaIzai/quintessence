@@ -8,7 +8,6 @@
       <th>Course</th>
       <th>Title</th>
       <th>Desc</th>
-      <th>Attachment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
         <td><%= lesson.course_id %></td>
         <td><%= lesson.title %></td>
         <td><%= lesson.desc %></td>
-        <td><%= lesson.attachment %></td>
         <td><%= link_to 'Show', lesson %></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
         <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
