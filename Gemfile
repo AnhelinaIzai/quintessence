@@ -47,9 +47,7 @@ end
   gem 'activeadmin'
   gem 'devise'
   gem 'simple_form'
-
-
-      gem 'carrierwave', '~> 1.0'
+  gem 'carrierwave', '~> 1.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

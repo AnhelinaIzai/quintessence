@@ -15,5 +15,11 @@
   <%= @lesson.desc %>
 </p>
 
+
+
+<%= render 'questions/question', {lesson: @lesson} %>
+<%= render 'questions/question_list', {lesson: @lesson} %>
+
+<%= render partial: "questions/question_list", locals: { lesson: @lesson } %>
+
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
