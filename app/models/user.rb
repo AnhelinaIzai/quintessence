@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_one :profile
   has_many :question, dependent: :destroy
-
+  has_many :bookmarks
 end

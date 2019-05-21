@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container-fluid">
 <div class="row">
-  <div class="col s8 offset-s2">
-     <h3>Sign up</h3>
+  <div class="col-4"></div>
+  <div class="col-4"><center>
+     <h2>Sign up</h2>
         <p class="flow-text"> To access the best online courses and start learning! </p>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
           <div class="field">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, class: 'validate', :required => true %>
+            <%= f.email_field :email, autofocus: true, class: 'validate', :required => true, placeholder: "username@domain.com"%>
           </div>
 
           <div class="field">
@@ -15,22 +16,22 @@
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "off", class: 'validate', :required => true %>
+            <%= f.password_field :password, autocomplete: "off", class: 'validate', :required => true, placeholder: "************" %>
           </div>
 
           <div class="field">
             <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'validate', :required => true %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'validate', :required => true, placeholder: "************" %>
           </div>
-
-
-
-          <div class="actions center-align">
-            <%= f.submit "Sign up",  class: 'waves-effect waves-light btn-large indigo' %>
+          <div class="actions">
+            <%= f.submit "Sign up", class:"subm" %>
           </div>
         <% end %>
          <%= render "devise/shared/links" %>
-      </div>
+         </center>
+         </div>
+         <div class="col-4"></div>
+      
 
      <script>
        $(document).ready(function() {
@@ -47,5 +48,3 @@
         });
      </script>
   </div>
-</div>
-</div>

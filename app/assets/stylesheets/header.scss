@@ -1,0 +1,27 @@
+.navbar{
+	background-color:#1F2740 !important;
+	height: 70px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	text-decoration: none;
+	font-size: 16px;
+	font-family: 'Fira Sans', sans-serif;
+	color: #ffffff;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+	background-color:#1F2740 !important;
+	color: #7A9CFF;
+}
+
+.navbar-logo{
+    text-decoration: none;
+	font-size: 19px;
+	font-family: 'Fira Sans', sans-serif;
+	color: #ffffff;
+}
+
+.navbar-logo:hover{
+	background-color:#1F2740 !important;
+	color: #7A9CFF;
+}

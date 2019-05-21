@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :profiles
 
   resources :courses do
+    resources :bookmarks, only: [:create, :destroy], shallow: true
     resources :lessons, shallow:true do
       resources :questions, only: [:index, :create, :destroy],  shallow: true
     end
