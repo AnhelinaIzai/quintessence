@@ -1,8 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="proff">
 <%= form_with(model: profile, local: true, url: url) do |form| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
       <ul>
       <% profile.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,7 +14,7 @@
       </ul>
     </div>
   <% end %>
-
+   <center><h2>Add Profile Info</h2>
   <div class="field">
     <%= form.text_field :firstname, class: "form-control", placeholder: "Input Firstname" %>
   </div>
@@ -23,11 +27,17 @@
     <%= form.text_field :country, class: "form-control", placeholder: "Input Country" %>
   </div>
   
-  <div class="field">
+  <div class="field1">
      <%= form.file_field :avatar %>
   </div>
-  
+
   <div class="actions">
-    <%= form.submit %>
+      <%= form.submit "Create Profile", class:"subm" %>
   </div>
 <% end %>
+</center>
+        </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

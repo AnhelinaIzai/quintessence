@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
@@ -14,8 +15,8 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.title %></td>
-        <td><%= course.description %></td>
+        <td><p><%= course.title %></p></td>
+        <td><p><%= course.description %></p></td>
         <td> <%= image_tag(course.avatar.url,size:"200x200")  %> </td>
 
     
@@ -26,3 +27,4 @@
 </table>
 
 <br>
+</div>

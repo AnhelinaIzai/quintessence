@@ -3,9 +3,14 @@
   <head>
     <title>Quintessence</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% begin %>
+  <%= stylesheet_link_tag 'application', 'data-turbolinks-track' => 'reload', media: 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+<% rescue %>
+  <script>
+    window.location.replace "#{user_session_url()}"
+  </script>
+<% end %>
   </head>
 
   <body>
