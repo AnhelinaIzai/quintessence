@@ -25,20 +25,5 @@ form html: { multipart: true } do |f|
    end
    actions
  end
- controller do
-    def create
-      # Good
-      @course = Course.new(permitted_params[:course])
-
-
-      if @course.save
-        redirect_to edit_admin_course_path(@course.id)
-      end
-
-      def edit
-		@course = Course.find(params[:id])
-	end
-  end
-end
 
 end

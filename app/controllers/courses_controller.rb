@@ -13,7 +13,7 @@ def create
 
 end
 def show
-
+	@is_bookmarked = @course.is_bookmarked(current_user)
 end
 
 def update

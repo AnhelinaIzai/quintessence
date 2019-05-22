@@ -4,6 +4,8 @@ class CreateLessons < ActiveRecord::Migration[5.1]
       t.integer :course_id
       t.string :title
       t.string :desc
+      t.string :avatar
+      t.string :attachment
 
       t.timestamps
     end

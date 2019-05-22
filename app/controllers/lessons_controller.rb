@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
    before_action :set_course, only: [:new, :create]
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  before_filter(:get_course)
 
   # GET /lessons
   # GET /lessons.json
@@ -12,11 +11,12 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+    @question = Question.all
   end
 
   # GET /lessons/new
   def new
-     @lesson = @course.lessons.build
+     @lesson = @course.lessons.new
   end
 
   # GET /lessons/1/edit
@@ -72,16 +72,13 @@ class LessonsController < ApplicationController
       @lesson = Lesson.find(params[:id])
     end
 
-def get_course
-    @course = Course.find(params[:course_id])
-end
-private
+
  def set_course
     @course = Course.find_by(id: params[:course_id])
   end
-  private
+
 
     def lesson_params
-      params.require(:lesson).permit(:course_id, :title, :desc, :video)
+      params.require(:lesson).permit(:course_id, :title, :desc, {attachment: []}, :avatar)
     end
 end

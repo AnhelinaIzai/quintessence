@@ -6,7 +6,7 @@
 </p>
 
 
-<p>  
+<p>
    <%= image_tag(@course.avatar.url,size:"200x200")  %>
 </p>
 
@@ -14,5 +14,9 @@
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
+
+<div id="bookmark-icon-post-<%= @course.id.to_s %>" class="ml-auto">
+  <%= render "bookmark_icon", {is_bookmarked: @course.is_bookmarked(current_user), course: @course} %>
+</div>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

@@ -1,0 +1,45 @@
+.col-4{
+	
+	margin-top: 50px;
+}
+.row{
+	height: 480px;
+	font-family: 'Hind Siliguri', sans-serif;
+}
+.col-8{
+	background-image: url(login.jpg);
+}
+
+h2{
+	color:#3D4E80;
+}
+
+.button{
+	color:#3D4E80;
+}
+
+.subm{
+	border: 1px solid #3D4E80;
+	background:  #3D4E80 !important;
+	border-radius: 11px;
+	outline:0px !important;
+}
+.subm:hover{
+	background-image:linear-gradient(to top, #3D4E80 0%, #7A9CFF) !important;
+	border: 1px solid #3D4E80;
+	
+}
+
+a{
+	text-decoration: none !important;
+	color: #7A9CFF;	
+}
+
+a:hover{
+	background-color: #ffffff;
+	color: #3D4E80;
+}
+
+p{
+	font-size: 15px;
+}

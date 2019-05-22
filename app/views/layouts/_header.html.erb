@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <%= link_to "Quintessence", root_path, class: "navbar-brand" %>
+    <%= link_to "Quintessence", root_path, class: "navbar-logo" %>
    
     <ul class="navbar-nav ml-auto">
       <%= link_to courses_path, class: "nav-link" do %>
@@ -16,10 +16,8 @@
         <% end %>
       <% end %>
       <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>
-        <i class="fas fa-sign-out-alt"></i> Logout
-      <% end %>
-
-     
+        <i class="fas fa-sign-out-alt"></i> Log out
+      <% end %>  
 <% else %>
        <%= link_to user_session_path, class: "nav-link" do %>
         <i class="fas fa-sign-in-alt"></i> Login

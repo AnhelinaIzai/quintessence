@@ -47,7 +47,7 @@ end
   gem 'activeadmin'
   gem 'devise'
   gem 'simple_form'
-
+  gem 'font-awesome-sass', '~> 5.8.1'
 
       gem 'carrierwave', '~> 1.0'
 

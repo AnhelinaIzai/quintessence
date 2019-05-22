@@ -1,0 +1,10 @@
+<% lesson.question.each do |question| %>
+  <div class="mb-2">
+    <span><%= question.body %></span>
+    <% if question.user == current_user %>
+      <%= link_to question_path(question), method: :delete, remote: true, class: "core-sprite delete-question hide-text", id: "deletecoment" do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
