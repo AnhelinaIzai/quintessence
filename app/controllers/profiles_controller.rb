@@ -2,14 +2,9 @@ class ProfilesController < ApplicationController
  before_action :authenticate_user!
  
   def index
+    @user = User.find_by(id: params[:id])
+    @saved = Course.joins(:bookmarks).where("bookmarks.user_id=?", current_user.id)
   end
-  
- # def profile_info
-   # @profile = current_user.profile
-    #respond_to do |format|
-    #   format.js
-    # end
- # end
   
   def new
     @profile = Profile.new
@@ -38,7 +33,6 @@ class ProfilesController < ApplicationController
     else
       render 'new'
     end
-    
   end
   
   private
