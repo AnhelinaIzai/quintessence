@@ -1,0 +1,51 @@
+<!--
+# ITESM CEM, May 11, 2011.
+# Ruby Source File
+# Activity::  Final Project: Design Patterns Quiz App
+# Authors::   1165536 Juliana Pena
+-->
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @test_question.text %>
+</p>
+
+<h4>Choices</h4>
+<ul>
+  <% @test_question.choices.each do |choice| %>
+	 <li>
+		<%= choice.text %>
+		<% if choice.correct %> (Correct) <% end %>
+
+		<%= form_tag({:controller => "choices", :action => "destroy"}) do %>
+		  <%= hidden_field_tag :test_question, @test_question.id %>
+		  <%= hidden_field_tag :choice, choice.id %>
+		  <%= submit_tag "Delete" %>
+		<% end %>
+
+	 </li>
+  <% end %>
+</ul>
+
+<h5>New Choice</h5>
+<%= form_tag({:controller => "choices", :action => "create"}) do %>
+  <%= hidden_field_tag :test_question, @test_question.id %>
+
+  <%= label_tag :text, "Text" %><br />
+  <%= text_field_tag :text %>
+  <br />
+  <%= check_box_tag :correct %>
+  <%= label_tag :correct, "Correct" %>
+  <br />
+  <%= submit_tag "Create" %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_test_question_path(@test_question) %> |
+
+
+<% content_for(:title) do %>
+  test_question Details
+<% end %>

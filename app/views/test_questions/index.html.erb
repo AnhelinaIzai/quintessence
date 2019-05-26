@@ -1,0 +1,46 @@
+<!--
+# ITESM CEM, May 11, 2011.
+# Ruby Source File
+# Activity::  Final Project: Design Patterns Quiz App
+# Authors::   1165536 Juliana Pena
+-->
+
+<h1>Listing test_questions</h1>
+
+<p>Total: <%= @test_questions.size %></p>
+<p><%= link_to 'New test_question', new_test_question_path %></p>
+
+<table border="1">
+  <tr>
+    <th>Text</th>
+    <th>Choices</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @test_questions.each do |test_question| %>
+  <tr>
+    <td><%= test_question.text %></td>
+    <td>
+      <ul>
+        <% test_question.choices.each do |choice| %>
+          <li>
+            <%= choice.text %>
+            <% if choice.correct %> (Correct) <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </td>
+    <td><%= link_to 'Show', test_question %></td>
+    <td><%= link_to 'Edit', edit_test_question_path(test_question) %></td>
+    <td><%= link_to 'Destroy', test_question, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<% content_for(:title) do %>
+  All test_questions
+<% end %>

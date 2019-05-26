@@ -19,6 +19,7 @@ class CoursesController < InheritedResources::Base
 	end
 
 	def show
+		@test_question = TestQuestion.new
 	  @is_bookmarked = @course.is_bookmarked(current_user)
 	  @lessons = Lesson.all
 	end

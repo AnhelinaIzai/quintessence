@@ -25,11 +25,14 @@
 
 <% if current_user.admin == true %>
   <%= link_to "new_lesson_path", new_course_lesson_path(@course) %>
+  <%= link_to "ADD TESTS", new_course_test_question_path(@course), remote: true, data: { toggle: 'modal', 'target': '#new-test'} %>
 <% end %>
 
 <% @course.lessons.each do |les| %>
   <%= link_to  les.title, lesson_path(les) %> <br>
 <% end %>
+
+<div id="new-test"></div>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

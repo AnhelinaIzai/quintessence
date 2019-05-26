@@ -1,0 +1,30 @@
+<h1>test_question <%= @current + 1 %> of <%= @total %></h1>
+<p id="test_question"><%= @test_question.text %></p>
+
+<%= form_tag({:controller => "tests", :action => "answer"}) do %>
+<% if @test_question.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@test_question.errors.count, "error") %> prohibited this catalog from being saved:</h2>
+
+     <ul>
+     <% @test_question.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+  <% @choices.each do |choice| %>
+	 <p class="choice">
+		<%= radio_button_tag(:choice, choice.id) %>
+		<%= label_tag("choice_".concat(choice.id.to_s).to_sym, choice.text) %>
+	 </p>
+  <% end %>
+
+  <div class="center">
+	 <%= submit_tag("Continue", :class => "submit") %>
+  </div>
+<% end %>
+
+<% content_for(:title) do %>
+  test_question <%= @current + 1 %> of <%= @total %>
+<% end %>
