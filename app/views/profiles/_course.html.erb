@@ -1,4 +1,7 @@
-<% courses.each do |course| %>
+<% courses.each do |course| %> 
+<div class="course"> 
+    <%= link_to image_tag(course.avatar_url, size: "150x150"), course_path(course) %>
     <%= link_to  course.title, course_path(course) %>
-    <%= link_to  image_tag(course.avatar_url), course_path(course) %>
+    <%= link_to "Show", course_path(course), class:"subm"  %>
+    </div>
 <% end %>
