@@ -15,10 +15,11 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><p><%= course.title %></p></td>
+        <td> <%= link_to   course.title , course_path(course) %></td>
+       
         <td><p><%= course.description %></p></td>
         <td> <%= image_tag(course.avatar.url,size:"200x200")  %> </td>
-
+        
     
         </td>
       </tr>

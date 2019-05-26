@@ -1,39 +1,50 @@
 class CoursesController < InheritedResources::Base
-	 before_action :set_course, only: [:create, :show, :edit, :update, :destroy]
-def index
-	@courses = Course.all
-end
+	before_action :set_course, only: [:create, :show, :edit, :update, :destroy]
 
-def new
-	@course = Course.new
-end
+	def index
+	  @courses = Course.all
+	end
 
-def create
+	def new
+		@course = Course.new
+	end
 
+	def create
+		@course = Course.create(course_params)
+		if @course.save
+			redirect_to course_path(@course)
+		else
+			render 'new'
+		end
+	end
 
-end
-def show
-	@is_bookmarked = @course.is_bookmarked(current_user)
-end
+	def show
+	  @is_bookmarked = @course.is_bookmarked(current_user)
+	  @lessons = Lesson.all
+	end
 
-def update
-	@course.update(course_params)
-    if @course.save
-      redirect_to course_path
-    end
-end
+	def edit
+	  #code
+	end
 
-def destroy
-	@course.destroy
-    redirect_to root_path
-end
-  private
+	def update
+		@course.update(course_params)
+	    if @course.save
+	      redirect_to course_path
+	    end
+	end
 
-    def course_params
-      params.require(:course).permit(:title, :description, :avatar, :course_id)
-    end
+	def destroy
+		@course.destroy
+	    redirect_to root_path
+	end
 
-     def set_course
-    @course = Course.find(params[:id])
+private
+  def course_params
+    params.require(:course).permit(:title, :description, :avatar, :course_id)
+  end
+
+  def set_course
+    @course = Course.find_by(id: params[:id])
   end
 end
