@@ -17,22 +17,23 @@
   <% end %>
 </p>
 <% if current_user.admin == true %>
+  <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-primary" %>
   <%= link_to "new_lesson_path", new_course_lesson_path(@course), class: "btn btn-primary" %>
+  <%= link_to "ADD TESTS", new_course_test_question_path(@course), class: "btn btn-primary", remote: true, data: { toggle: 'modal', 'target': '#new-test'} %>
 <% end %>
 
 <% @course.lessons.each do |les| %>
   <%= link_to  les.title, lesson_path(les), class: "btn btn-primary" %> <br>
 <% end %>
 
-  </div>
-  </div>
-  
-  <div class="description">
-  <strong>Description:</strong><br />
-  <center>
-  <%= @course.description %>
-  </center>
-  </div>
+<div id="new-test"></div>
+
+<div class="description">
+ <strong>Description:</strong><br />
+ <center>
+ <%= @course.description %>
+ </center>
+ </div>
 <%= link_to 'Back', courses_path %>
 
 </div>

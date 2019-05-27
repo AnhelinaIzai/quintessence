@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190521222115) do
+ActiveRecord::Schema.define(version: 20190526211313) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20190521222115) do
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_bookmarks_on_course_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.string "text"
+    t.boolean "correct"
+    t.integer "test_question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -86,6 +94,13 @@ ActiveRecord::Schema.define(version: 20190521222115) do
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_questions_on_lesson_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "test_questions", force: :cascade do |t|
+    t.integer "course_id"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

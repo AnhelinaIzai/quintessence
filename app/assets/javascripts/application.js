@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require turbolinks
 //= require_tree .
 $(".navbar a").click(function(){
   $("body,html").animate({
