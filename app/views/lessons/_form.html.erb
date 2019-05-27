@@ -7,8 +7,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div class="field">
     <%= form.label :desc %>
     <%= form.text_field :desc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attachment %>
+    <%= form.file_field :attachment, multiple: true %>
   </div>
 
 

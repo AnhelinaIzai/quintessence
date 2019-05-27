@@ -42,7 +42,7 @@ class CoursesController < InheritedResources::Base
 
 private
   def course_params
-    params.require(:course).permit(:title, :description, :avatar, :course_id)
+    params.require(:course).permit(:title, :description, :avatar)
   end
 
   def set_course

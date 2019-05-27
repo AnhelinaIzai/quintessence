@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/master.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="js/master.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+    	<nav>
+        <div class="logo">
+          GALLERY
+        </div>
+				<div class="menu">
+					<ul>
+      			<li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+ <!-- Gallery -->
+ <div class="content">
+	 <div class="container">
+
+		 <div class="mySlides">
+			 <div class="numbertext">1 / 12</div>
+				 <img src="images/block.jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">2 / 12</div>
+				 <img src="images/block (1).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">3 / 12</div>
+				 <img src="images/block (2).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">4 / 12</div>
+				 <img src="images/block (3).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">5 / 12</div>
+				 <img src="images/block (4).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">6 / 12</div>
+				 <img src="images/block (5).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">7 / 12</div>
+				 <img src="images/block.jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">8 / 12</div>
+				 <img src="images/block (1).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">9 / 12</div>
+				 <img src="images/block (2).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">10 / 12</div>
+				 <img src="images/block (3).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">11 / 12</div>
+				 <img src="images/block (4).jpg" style="width:100%">
+		 </div>
+
+		 <div class="mySlides">
+			 <div class="numbertext">12 / 12</div>
+				 <img src="images/block (5).jpg" style="width:100%">
+		 </div>
+
+		 <!-- buttons next/previous -->
+		 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		 <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		 <!-- image text -->
+		 <div class="caption-container">
+			 <p id="caption"></p>
+		 </div>
+
+		 <!-- slides -->
+		 <div class="row">
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block.jpg" style="width:100%" onclick="currentSlide(1)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (1).jpg" style="width:100%" onclick="currentSlide(2)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (2).jpg" style="width:100%" onclick="currentSlide(3)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (3).jpg" style="width:100%" onclick="currentSlide(4)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (4).jpg" style="width:100%" onclick="currentSlide(5)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (5).jpg" style="width:100%" onclick="currentSlide(6)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block.jpg" style="width:100%" onclick="currentSlide(7)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (1).jpg" style="width:100%" onclick="currentSlide(8)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (2).jpg" style="width:100%" onclick="currentSlide(9)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (3).jpg" style="width:100%" onclick="currentSlide(10)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (4).jpg" style="width:100%" onclick="currentSlide(11)" alt="Slide Text">
+			 </div>
+			 <div class="column_gallery">
+				 <img class="demo cursor" src="images/block (5).jpg" style="width:100%" onclick="currentSlide(12)" alt="Slide Text">
+			 </div>
+		 </div>
+	 <!-- gallery container -->
+	 </div>	
+ </div>
+
+	<!-- wrapper -->
+  </div>
+	<div class="footer">
+	  <p>©Powered by UzNU</p>
+	</div>
+
+  <script type="text/javascript">
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // button next/previous
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // slides
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+  </script>
+</body>
+</html>
