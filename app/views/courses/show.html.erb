@@ -1,35 +1,39 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container-fluid">
+  <div class="index_course">
+  <div class="image">
 <p>
-  <strong>Title:</strong>
+   <%= image_tag(@course.avatar.url,size:"100x100")  %>
+</p>
+
+  </div>
+  <div class="title">
+  <strong>Title:</strong><br />
   <%= @course.title %>
-</p>
-
-
-<p>
-   <%= image_tag(@course.avatar.url,size:"200x200")  %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
-
 <p>
   <% if @is_bookmarked.present? %>
-    <%= link_to "Bookmarked", bookmark_path(@is_bookmarked), method: :delete %>
+    <%= link_to "Bookmarked", bookmark_path(@is_bookmarked), method: :delete, class: "btn btn-primary" %>
   <% else %>
-    <%= link_to "Bookmark", course_bookmarks_path(@course), method: :post %>
+    <%= link_to "Bookmark", course_bookmarks_path(@course), method: :post, class: "btn btn-primary"%>
   <% end %>
 </p>
-
 <% if current_user.admin == true %>
-  <%= link_to "new_lesson_path", new_course_lesson_path(@course) %>
+  <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-primary" %>
+  <%= link_to "new_lesson_path", new_course_lesson_path(@course), class: "btn btn-primary" %>
+  <%= link_to "ADD TESTS", new_course_test_question_path(@course), class: "btn btn-primary", remote: true, data: { toggle: 'modal', 'target': '#new-test'} %>
 <% end %>
 
 <% @course.lessons.each do |les| %>
-  <%= link_to  les.title, lesson_path(les) %> <br>
+  <%= link_to  les.title, lesson_path(les), class: "btn btn-primary" %> <br>
 <% end %>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<div id="new-test"></div>
+
+<div class="description">
+ <strong>Description:</strong><br />
+ <center>
+ <%= @course.description %>
+ </center>
+ </div>
 <%= link_to 'Back', courses_path %>
+
+</div>
