@@ -2,7 +2,7 @@
     <%= link_to "Quintessence", root_path, class: "navbar-logo" %>
 
     <ul class="navbar-nav ml-auto">
-      <%= link_to courses_path, class: "nav-link" do %>
+      <%= link_to courses_path, class: "nav-link",value: "Show courses" do %>
         <i class="far fa-images"></i> Show courses
       <% end %>
 <% if user_signed_in? %>

@@ -1,31 +1,30 @@
+
 <div class="container-fluid">
-<p id="notice"><%= notice %></p>
+<div class="course_e">
 
-<h1>Courses</h1>
-<%= link_to 'New Course', new_course_path %>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+ <h1 class="text-center">Courses</h1>
+  <div class="row">
     <% @courses.each do |course| %>
-      <tr>
-        <td> <%= link_to   course.title , course_path(course) %></td>
-       
-        <td><p><%= course.description %></p></td>
-        <td> <%= image_tag(course.avatar.url,size:"200x200")  %> </td>
-        
-    
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+   <div class="col-4">
+      
+    <div class="card">
+      
+     <div class="card-img">
 
-<br>
+       <%= image_tag(course.avatar.url,size:"50x50", class: "img-fluid")%> 
+     </div>
+     
+     <div class="card-body">
+      <%= link_to   course.title , course_path(course), class: "card-title" %>
+      
+     </div>
+     <div class="card-footer">
+      <%= link_to "Read more", course_path(course), class: "card-link"%>
+     </div>
+    </div> 
+      </div> 
+      <div class="about" id="about"></div>
+   <%end%> 
+   </div>
+  </div>
 </div>

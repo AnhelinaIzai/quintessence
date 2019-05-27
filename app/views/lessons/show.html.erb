@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Course:</strong>
-  <%= @lesson.course_id %>
-</p>
+<div class="container-fluid">
 
 <p>
   <strong>Title:</strong>
@@ -20,4 +15,6 @@
 <%= render 'questions/question', {lesson: @lesson} %>
 <%= render 'questions/question_list', {lesson: @lesson} %>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Edit', edit_lesson_path(@lesson) %>
+<div class="about" id="about"></div>
+</div>
