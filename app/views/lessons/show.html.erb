@@ -9,6 +9,10 @@
   <%= @lesson.desc %>
 </div>
 
+<% @lesson.attachment.each do |att| %>
+  <%= link_to att.url.split('/').last, att.url %> <br>
+<% end %>
+
 
 
 <%= render 'questions/question', {lesson: @lesson} %>

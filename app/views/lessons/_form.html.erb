@@ -9,8 +9,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div class="field">
     <%= form.label :desc %>
      <%= form.text_area :desc, :class => "tinymce", :rows => 10, :cols => 40 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attachment %>
+    <%= form.file_field :attachment, multiple: true %>
   </div>
 
 
