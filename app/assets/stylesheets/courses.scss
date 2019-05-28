@@ -89,7 +89,7 @@ table{
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #4CAF50;
+  background-color: #3D4E80;
   color: white;
 }
 
@@ -112,4 +112,16 @@ table{
 	width: 1020px;
 	margin-top: 25px;
 	height:  auto;
+}
+.card{
+	border: 1px solid #3D4E80;
+}
+
+.card-footer{
+	background: linear-gradient(to right, #3D4E80, #ddd);
+}
+
+.card-link:hover{
+	color: #ffffff;
+	background: linear-gradient(to right, #3D4E80, #ddd) !important;
 }
