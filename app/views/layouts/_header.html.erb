@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <%= link_to "Quintessence", root_path, class: "navbar-logo" %>
+    <%= link_to root_path, class: "navbar-logo" do%>
+      <i class="fas fa-atom"></i> Quintessence
+<% end %>
 
     <ul class="navbar-nav ml-auto">
       <%= link_to courses_path, class: "nav-link",value: "Show courses" do %>
@@ -7,7 +9,9 @@
       <% end %>
 <% if user_signed_in? %>
       <% if current_user.admin == true %>
-        <%= link_to "create new course", new_course_path %>
+        <%= link_to  new_course_path, class: "nav-link" do %>
+          <i class="fas fa-plus"></i> Create new course
+          <% end%>
       <% end %>
       <% if current_user.profile.nil? %>
         <%= link_to new_profile_path, class: "nav-link" do %>
