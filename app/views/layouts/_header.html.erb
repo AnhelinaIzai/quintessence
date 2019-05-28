@@ -5,7 +5,7 @@
 
     <ul class="navbar-nav ml-auto">
 
-      
+
       <%= link_to "Test",  tests_index_path,  class: "nav-link"%>
 
       <%= link_to courses_path, class: "nav-link",value: "Show courses" do %>
@@ -13,7 +13,7 @@
       <% end %>
 <% if user_signed_in? %>
       <% if current_user.admin == true %>
-        <%= link_to  new_course_path, class: "nav-link" do %>
+        <%= link_to  new_course_path , remote: true, data: { toggle: 'modal', 'target': '#new-course'}, class: "nav-link" do %>
           <i class="fas fa-plus"></i> Create new course
           <% end%>
       <% end %>

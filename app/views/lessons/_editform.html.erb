@@ -1,0 +1,31 @@
+<div class="container-fluid">
+<%= form_with(model: lesson, local: true, url: lesson_path) do |form| %>
+<%= tinymce %>
+<%= form.hidden_field :course_id, value: @course %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+     <%= form.text_area :desc, :class => "tinymce", :rows => 10, :cols => 40 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attachment %>
+    <%= form.file_field :attachment, multiple: true %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit%>
+  </div>
+<% end %>
+</div>
