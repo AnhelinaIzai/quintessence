@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20190526211313) do
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.string "documents"
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,14 +80,14 @@ ActiveRecord::Schema.define(version: 20190526211313) do
     t.string "lastname"
     t.string "country"
     t.string "avatar"
-    t.integer "age"
-    t.string "school"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "body"
+    t.integer "questionable_id"
+    t.string "questionable_type"
     t.integer "lesson_id"
     t.integer "user_id"
     t.datetime "created_at", null: false

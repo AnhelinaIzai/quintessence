@@ -108,8 +108,7 @@ table{
 }
 
 .field2{
-	margin-left: -30px;
-	width: 1020px;
+	width: 1200px;
 	margin-top: 25px;
 	height:  auto;
 }
@@ -124,4 +123,21 @@ table{
 .card-link:hover{
 	color: #ffffff;
 	background: linear-gradient(to right, #3D4E80, #ddd) !important;
+}
+
+.center{
+	margin-top: 15px;
+}
+.desc{
+	margin-left: -300px;
+	
+}
+
+.marks{
+	margin-right: 100px;
+}
+.close{
+	height: 10px;
+	width: 10px;
+	margin-top: 30px;
 }
