@@ -36,14 +36,16 @@
   <%= link_to "ADD TESTS", new_course_test_question_path(@course), class: "btn btn-primary", remote: true, data: { toggle: 'modal', 'target': '#new-test'} %>
 <% end %>
 <center>
-<% @course.lessons.each do |les| %>
+
 <table>
+  <% @course.lessons.each do |les| %>
   <tr>
     <td><%= les.title%></td>
   <td><%= link_to "Show", lesson_path(les), class: "btn btn-primary" %> </td>
   </tr>
+  <% end %>
 </table>
-<% end %>
+
 </center>
 <div id="new-test"></div>
 

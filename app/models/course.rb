@@ -2,7 +2,7 @@ class Course < ApplicationRecord
 	mount_uploader :avatar, AvatarUploader
   has_many :lessons
   has_many :bookmarks
-	has_one :test_question
+	has_many :test_question
 
 
 	def is_bookmarked user

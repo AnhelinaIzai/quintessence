@@ -71,6 +71,7 @@ li{
 table{
    width: 500px;
   height: auto;
+  margin-top: 20px;
 
 }
 
@@ -101,7 +102,14 @@ table{
 }
 .form-control{
 	border: 1px solid #ddd;
-	height: 70px;
+	
 	margin-bottom: 10px;
 	margin-left: 10px;
+}
+
+.field2{
+	margin-left: -30px;
+	width: 1020px;
+	margin-top: 25px;
+	height:  auto;
 }
