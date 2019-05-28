@@ -1,3 +1,5 @@
+<div class="container-fluid">
+  <center>
 <%= form_with(model: course, local: true) do |form| %>
   <% if course.errors.any? %>
     <div id="error_explanation">
@@ -11,23 +13,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field1">
     <%= form.label :title %>
     <%= form.text_field :title, id: :course_title %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= form.label :description %>
     <%= form.text_field :description, id: :course_description %>
   </div>
 
-   <div class="field">
-     <%= form.label :avatar %>
+   <div class="field1">
      <%= form.file_field :avatar %>
   </div>
-
+  <div class="field1">
+     <%= form.file_field :document %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</center>
+</div>

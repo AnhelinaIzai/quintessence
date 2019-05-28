@@ -1,14 +1,13 @@
 <div class="container-fluid">
-
+	<div class="lesson">
 <p>
   <strong>Title:</strong>
   <%= @lesson.title %>
 </p>
 
-<p>
-  <strong>Desc:</strong>
+<div class="std">
   <%= @lesson.desc %>
-</p>
+</div>
 
 <% @lesson.attachment.each do |att| %>
   <%= link_to att.url.split('/').last, att.url %> <br>
@@ -21,4 +20,5 @@
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) %>
 <div class="about" id="about"></div>
+</div>
 </div>

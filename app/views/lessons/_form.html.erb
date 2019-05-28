@@ -1,4 +1,6 @@
+<div class="container-fluid">
 <%= form_with(model: lesson, local: true, url: course_lessons_path) do |form| %>
+<%= tinymce %>
 <%= form.hidden_field :course_id, value: @course.id %>
 
   <div class="field">
@@ -13,7 +15,7 @@
 
   <div class="field">
     <%= form.label :desc %>
-    <%= form.text_field :desc %>
+     <%= form.text_area :desc, :class => "tinymce", :rows => 10, :cols => 40 %>
   </div>
 
   <div class="field">
@@ -26,3 +28,4 @@
     <%= form.submit%>
   </div>
 <% end %>
+</div>
