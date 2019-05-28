@@ -7,6 +7,9 @@ class CoursesController < InheritedResources::Base
 
 	def new
 		@course = Course.new
+		respond_to do |format|
+       format.js
+    end
 	end
 
 	def create
@@ -19,8 +22,10 @@ class CoursesController < InheritedResources::Base
 	end
 
 	def show
-		@test_question = TestQuestion.new
-	  @is_bookmarked = @course.is_bookmarked(current_user)
+		if user_signed_in?
+			@test_question = TestQuestion.new
+		  @is_bookmarked = @course.is_bookmarked(current_user)
+		end
 	  @lessons = Lesson.all
 	end
 
@@ -30,14 +35,14 @@ class CoursesController < InheritedResources::Base
 
 	def update
 		@course.update(course_params)
-	    if @course.save
-	      redirect_to course_path
-	    end
+	  if @course.update
+	    redirect_to course_path
+	  end
 	end
 
 	def destroy
 		@course.destroy
-	    redirect_to root_path
+	  redirect_to root_path
 	end
 
 private

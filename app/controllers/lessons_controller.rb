@@ -1,29 +1,17 @@
 class LessonsController < ApplicationController
-   before_action :set_course, only: [:new, :create]
+  before_action :set_course, only: [:new, :create, :show, :edit, :update]
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
-  # GET /lessons
-  # GET /lessons.json
   def index
     @lessons = Lesson.all
   end
 
-  # GET /lessons/1
-  # GET /lessons/1.json
-  def show
-    @question = Question.all
-  end
-
-  # GET /lessons/new
   def new
+    respond_to do |format|
+       format.js
+     end
   end
 
-  # GET /lessons/1/edit
-  def edit
-  end
-
-  # POST /lessons
-  # POST /lessons.json
   def create
     @course = Course.find_by(id: params[:id])
     @lesson = Lesson.create(lesson_params)
@@ -32,11 +20,16 @@ class LessonsController < ApplicationController
     else
       render 'new'
     end
-
   end
 
-  # PATCH/PUT /lessons/1
-  # PATCH/PUT /lessons/1.json
+  def show
+    @question = Question.all
+  end
+
+  def edit
+    #code
+  end
+
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
@@ -49,8 +42,6 @@ class LessonsController < ApplicationController
     end
   end
 
-  # DELETE /lessons/1
-  # DELETE /lessons/1.json
   def destroy
     @lesson.destroy
     respond_to do |format|
@@ -59,19 +50,16 @@ class LessonsController < ApplicationController
     end
   end
 
-  private
+private
+  def set_lesson
+    @lesson = Lesson.find(params[:id])
+  end
 
-    def set_lesson
-      @lesson = Lesson.find(params[:id])
-    end
-
-
- def set_course
+  def set_course
     @course = Course.find_by(id: params[:course_id])
   end
 
-
-    def lesson_params
-      params.permit(:course_id, :title, :desc, {attachment: []}, :avatar)
-    end
+  def lesson_params
+    params.permit(:course_id, :title, :desc, {attachment: []}, :avatar)
+  end
 end

@@ -6,4 +6,12 @@ class Lesson < ApplicationRecord
   serialize :attachment, JSON
 
 	mount_uploader :avatar, AvatarUploader
+
+	def previous
+	  Lesson.where(["id < ?", id]).last
+	end
+
+	def next
+	  Lesson.where(["id > ?", id]).first
+	end
 end

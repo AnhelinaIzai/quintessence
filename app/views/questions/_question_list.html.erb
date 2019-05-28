@@ -1,5 +1,10 @@
 <% lesson.question.each do |question| %>
   <div class="mb-2">
+    <%= question.user.profile.firstname %>
+    <%= question.user.profile.lastname %>
+    <% if question.user.admin == true %>
+      Admin
+    <% end %><br>
     <span><%= question.body %></span>
     <% if question.user == current_user %>
       <%= link_to question_path(question), method: :delete, remote: true, class: "core-sprite delete-question hide-text", id: "deletecoment" do %>
