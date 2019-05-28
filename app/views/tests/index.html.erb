@@ -4,8 +4,12 @@
 # Activity::  Final Project: Design Patterns tests App
 # Author::    1165536 Juliana Pena
 -->
-
-<h1>Start tests</h1>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-4"></div>
+		<div class="col-4">
+	<center>
+<h2>Start tests</h2>
 
 <%= form_tag({:controller => "tests",
 				  :action => "start"}) do %>
@@ -13,10 +17,15 @@
   <p class="center"><%= select_tag(:number, options_for_select((1..10).map {|x| [x, x]}), :id => "count") %> <br /></p>
 
   <div class="center">
-	 <%= submit_tag "Start!", :class => "submit"%>
+	 <%= submit_tag "Start!", :class => "subm"%>
   </div>
 <% end %>
 
 <% content_for(:title) do %>
   Start tests
 <% end %>
+</center>
+</div>
+<div class="col-4"></div>
+</div>
+</div>
