@@ -1,4 +1,7 @@
-<h1>test_question <%= @current + 1 %> of <%= @total %></h1>
+<div class="container" style = "margin-top:50px;">
+<center>
+
+<h2>Test <%= @current + 1 %> of <%= @total %></h2>
 <p id="test_question"><%= @test_question.text %>  <%= @test_question.course.title %></p>
 
 
@@ -22,10 +25,12 @@
   <% end %>
 
   <div class="center">
-	 <%= submit_tag("Continue", :class => "submit") %>
+	 <%= submit_tag("Continue", :class => "subm") %>
   </div>
 <% end %>
 
 <% content_for(:title) do %>
   test_question <%= @current + 1 %> of <%= @total %>
 <% end %>
+</center>
+</div>

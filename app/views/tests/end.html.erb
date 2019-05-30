@@ -4,18 +4,21 @@
 # Activity::  Final Project: Design Patterns tests App
 # Author::    1165536 Juliana Pena
 -->
+<div class="container-fluid">
 
-<h1>tests Results</h1>
+
+<h2>tests Results</h2>
 <p id="question">You answered correctly <%= @correct %> out of <%= @total %> questions.</p>
 
 <p id="score"><%= @score %>%</p>
 
 <%= form_tag({:controller => "tests", :action => "index"}, :method => "get") do %>
   <div class="center">
-	 <%= submit_tag("Take another tests", :class => "submit") %>
+	 <%= submit_tag("Take another tests", :class => "subm") %>
   </div>
 <% end %>
 
 <% content_for(:title) do %>
   tests Results
 <% end %>
+</div>

@@ -1,9 +1,9 @@
 <%= form_for [lesson, Question.new], :html => {:class => "w-100"} do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :lesson_id, value: lesson.id %>
-  <%= f.text_field :body, class: "form-control",placeholder: "Add a comment ...", autocomplete: :off %>
+  <%= f.text_field :body, class: "form-control",placeholder: "Add your question ...", autocomplete: :off %>
 
     <%= f.submit :class => "subm" %>
-  
- 
+
+
 <% end %>

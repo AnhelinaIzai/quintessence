@@ -6,12 +6,14 @@
 -->
 
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
 
+<h2>
 <p>
-  <b>Text:</b>
+   Question:
   <%= @test_question.text %>
 </p>
-
+</h2>
 <h4>Choices</h4>
 <ul>
   <% @test_question.choices.each do |choice| %>
@@ -22,7 +24,7 @@
 		<%= form_tag({:controller => "choices", :action => "destroy"}) do %>
 		  <%= hidden_field_tag :test_question, @test_question.id %>
 		  <%= hidden_field_tag :choice, choice.id %>
-		  <%= submit_tag "Delete" %>
+		  <%= submit_tag "Delete", :class =>"subm" %>
 		<% end %>
 
 	 </li>
@@ -39,7 +41,7 @@
   <%= check_box_tag :correct %>
   <%= label_tag :correct, "Correct" %>
   <br />
-  <%= submit_tag "Create" %>
+  <%= submit_tag "Create", :class =>"subm" %>
 <% end %>
 
 
@@ -49,3 +51,4 @@
 <% content_for(:title) do %>
   test_question Details
 <% end %>
+</div>
