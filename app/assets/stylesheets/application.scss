@@ -23,12 +23,22 @@
 @import "courses";
 @import "footer";
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body{
-	background-color: #fafafa;
+	margin-bottom: 60px;
 }
 
 .main{
 	text-align: center;
-	margin-top: 200px;
+	margin-top: 100px;
+	
 }
 
+.qwerty{
+	text-align: center;
+	margin-top: 50px;
+}

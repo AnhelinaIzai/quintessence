@@ -49,3 +49,16 @@ a:hover{
 p{
 	font-size: 15px;
 }
+
+.lesson{
+	min-height: calc(100%-50px);
+	margin-bottom: -50px;
+}
+
+.lesson:after{
+	content: "";
+	display: block;
+}
+.lesson:after .footer{
+	height: 50px;
+}

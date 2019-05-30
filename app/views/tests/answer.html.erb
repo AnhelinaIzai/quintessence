@@ -1,5 +1,6 @@
 <div class="container">
-  <center>
+  <div class="main">
+  
     <h2>test_question <%= @current + 1 %> of <%= @total %></h1>
 
     <%= form_tag({:controller => "tests", :action => "answer"}) do %>
@@ -23,7 +24,7 @@
 
     <%= form_tag({:controller => "tests", :action => "test_question"}) do %>
       <div class="center">
-    	 <%= submit_tag("Continue", :class => "submit") %>
+    	 <%= submit_tag("Continue", :class => "subm") %>
       </div>
     <% end %>
 
@@ -31,6 +32,5 @@
       test_question <%= @current + 1 %> of <%= @total %>
     <% end %>
 
-    </center>
-
+</div>
 </div>
