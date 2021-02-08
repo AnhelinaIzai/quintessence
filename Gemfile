@@ -48,7 +48,7 @@ end
   gem 'devise'
   gem 'simple_form'
   gem 'font-awesome-sass', '~> 5.8.1'
-  gem 'carrierwave', '~> 1.0'
+  gem 'carrierwave', '~> 1.3'
   gem 'ransack'
   gem 'tinymce-rails'
 
